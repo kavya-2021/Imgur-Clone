@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home</title>
+        <link rel="stylesheet" href="./Home.css">
+    </head>
+    <body>
+        <div class="Home-Content-Container"> 
+        </div>
+    </body>
+</html>
+<script>
+
+    async function FindData(){
+        let res = await fetch("https://api.imgur.com/3/gallery/top/?showViral=true&mature=true&album_previews=true",{
+            method:"GET",
+            headers:{
+                Authorization:"Client-ID b51576e1ae7ec9c"
+            }
+        })
+        let {data} = await res.json();
+        //console.log(data);
+        showContent(data)
+    }
+    FindData();
+
+    function showContent(data){
+        console.log(data);
+        data.map((item,index)=>{
+        
+            let divFirst = document.createElement("div");
+            divFirst.setAttribute("class","childDiv");
+
+            let poster;
+
+            if(item.images){
+                if(item.images[0].type === "video/mp4"){
+                poster = document.createElement("video");
+                let source = document.createElement("source");
+                poster.setAttribute("class","Divposter");
+                 source.src = item.images[0].link;
+                 poster.append(source)
+              }else if(item.images[0].type === "image/jpeg"){
+               poster = document.createElement("img");
+               poster.setAttribute("class","Divposter");
+              poster.src = item.images[0].link;   
+            }
+            }else{
+                if(item.type === "video/mp4"){
+                poster = document.createElement("video");
+                let source = document.createElement("source");
+                poster.setAttribute("class","Divposter");
+                 source.src = item.link;
+                 poster.append(source)
+              }else if(item.type === "image/jpeg"){
+               poster = document.createElement("img");
+               poster.setAttribute("class","Divposter");
+              poster.src = item.link;   
+            } 
+            }
+
+            
+            function randomIntFromInterval(min, max) { // min and max included 
+                 return Math.floor(Math.random() * (max - min + 1) + min)
+            }
+
+            let hei = randomIntFromInterval(200, 400)
+            //console.log(item,index);
+            //console.log(`${hei}px`)
+            divFirst.style.height = `${hei}px`;
+            //divFirst.style.marginTop = `-${hei}px`
+            divFirst.append(poster)
+            document.querySelector(".Home-Content-Container").append(divFirst)
+        })
+    }
+
+</script>
