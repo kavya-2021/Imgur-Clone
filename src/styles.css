@@ -32,6 +32,18 @@ body {
     /* border:1px solid black; */
     background-color: #171544;
   }
+
+  #Navbar-Top-Single-Page {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1%;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    /* border:1px solid black; */
+    background-color: #1d1a61;
+  }
   
   #Navbar-Left {
     display: flex;
@@ -408,4 +420,52 @@ body {
       column-gap: 10px;
     }
   }
+
+  .redirected{
+     display:grid;
+     grid-template-columns: 5% 60%;
+     width:80%;
+     margin:auto;
+     justify-content: flex-start;
+     /* border:1px solid red; */
+     margin-top: 150px;
+     gap:5%;
+     /* position:relative; */
+     /* margin-left: 10%; */
+  }
+
+  .sideBar{
+    display:flex;
+    flex-direction:column;
+    position: fixed; 
+    top: 250px;
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 40%);
+    font-size: 25px;
+    color: #b4b9c2; 
+    align-items: center;
+    text-align: center;
+    padding:1%;
+    row-gap:20px;
+    border: .1px solid #e9ecf0;
+    border-radius: 4px;
+    height:max-content;
+  }
   
+  #up:hover{
+    color:green;
+  }
+
+  #down:hover{
+    color:red;
+  }
+
+  #votesCount{
+    font-size:15px
+  }
+
+  .singlePoster{
+    border:1px solid #e9ecf0;
+    width:800px;
+    height:800px;
+    margin-left: 160%;
+  }

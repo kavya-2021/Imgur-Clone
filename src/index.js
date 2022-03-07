@@ -18,6 +18,9 @@ async function FindData() {
     data.map((post, index) => {
       let MainChild = document.createElement("div");
       MainChild.setAttribute("class", "item");
+      MainChild.onclick=()=>{
+        NextPage(post);
+     }
   
       //  let image = document.createElement("img");
       //  image.setAttribute("class","image");
@@ -127,4 +130,9 @@ async function FindData() {
       return document.querySelector(".Home-Content-Container").append(MainChild);
     });
   }
+
+  function NextPage(post){
+    localStorage.setItem("singlePost",JSON.stringify(post));
+    window.location.href = "./redirected.html"
+ }
   
