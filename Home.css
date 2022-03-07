@@ -175,14 +175,11 @@ body {
   color: #fff;
   text-transform: capitalize;
   word-break: break-word;
-
-  border: 1px solid pink;
 }
 
 .Tag-title {
   padding-top: 15px;
   padding-bottom: 15px;
-  border: 1px solid pink;
 }
 
 .Message {
@@ -269,7 +266,7 @@ body {
 
 .title {
   display: -webkit-box;
-  max-height: 33.92px;
+  /* max-height: 33.92px; */
   overflow: hidden;
   text-overflow: ellipsis;
   -webkit-box-orient: vertical;
@@ -286,36 +283,131 @@ body {
   border-bottom-right-radius: 4px;
   /* position: absolute; */
   /* bottom:0; */
+  margin-top: -7%;
+  padding-top: 1%;
   padding-left: 1%;
   padding-right: 1%;
-  border: 1px solid teal;
 }
 
 .social {
-  border: 1px solid tomato;
   display: flex;
   padding: 1%;
   font-size: 13px;
+  width: 90%;
+  margin: auto;
   color: #b4b9c2;
   font-weight: 400;
   justify-content: space-between;
 }
 
 .votes {
-  border: 1px solid tomato;
   display: flex;
   justify-content: space-between;
   gap: 5px;
 }
 
-.voteup,.votedown{
+.voteup,
+.votedown {
   color: #b4b9c2;
 }
 
-.voteup:hover{
+.voteup:hover {
   color: green;
 }
 
-.votedown:hover{
+.votedown:hover {
   color: red;
+}
+
+@media only screen and (max-width: 1250px) {
+  
+}
+@media only screen and (max-width: 1410px) {
+  .TrendingTags-container > a:nth-child(10) {
+    display: none;
+  }
+}
+@media only screen and (max-width: 1300px) {
+  .TrendingTags-container > a:nth-child(9) {
+    display: none;
+  }
+}
+@media only screen and (max-width: 1190px) {
+  .TrendingTags-container > a:nth-child(8) {
+    display: none;
+  }
+}
+@media only screen and (max-width: 1030px) {
+  .TrendingTags-container > a:nth-child(7) {
+    display: none;
+  }
+}
+@media only screen and (max-width: 890px) {
+  .TrendingTags-container > a:nth-child(6) {
+    display: none;
+  }
+}
+@media only screen and (max-width: 760px) {
+  .TrendingTags-container > a:nth-child(5) {
+    display: none;
+  }
+  .Navbar-logo {
+    max-width: 100px;
+  }
+  .Button {
+    display: none;
+  }
+  #Middle {
+    display: none;
+  }
+  .buttonSign {
+    float: right;
+  }
+}
+@media only screen and (max-width: 630px) {
+  .TrendingTags-container > div:nth-child(4) {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .TrendingTags-container > div:nth-child(3) {
+    display: none;
+  }
+}
+@media only screen and (max-width: 360px) {
+  .TrendingTags-container > div:nth-child(2) {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .Navbar-logo {
+    width: 210px;
+  }
+}
+@media only screen and (max-width: 284px) {
+  #Explore {
+    display: none;
+  }
+}
+@media screen and (max-width: 500px) {
+  .Home-Content-Container {
+    column-count: 1;
+  }
+
+  video > source {
+    width: 80px;
+  }
+}
+@media screen and (min-width: 501px) and (max-width: 940px) {
+  .Home-Content-Container {
+    column-count: 2;
+  }
+}
+@media screen and (min-width: 940px) and (max-width: 1180px) {
+  .Home-Content-Container {
+    column-count: 3;
+    column-gap: 10px;
+  }
 }
